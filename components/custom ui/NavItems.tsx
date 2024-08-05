@@ -50,7 +50,7 @@ const NavItems = () => {
                 navItems.map((navItems, index) => {
                     return (
                         <div
-                            className="flex flex-col items-center cursor-pointer text-gray-700 hover:text-white"
+                            className="flex flex-col items-center cursor-pointer text-gray-700 hover:text-red-500"
                             key={index}
                         >
                             <span>
