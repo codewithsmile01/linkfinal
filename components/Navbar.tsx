@@ -16,10 +16,11 @@ const Navbar = () => {
       <div className="flex items-center max-w-6xl gap-7 justify-between h-14 mx-auto px-3">
         <div className="flex items-center gap-2">
           <Image
-            src={'/Linkedin_logo.png'}
+            src={'/logo.png'}
             alt="Logo"
             width={35}
             height={35}
+            className="rounded-full"
           />
           <div className="flex items-center gap-5">
             <SearchInputs />

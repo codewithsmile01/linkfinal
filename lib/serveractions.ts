@@ -89,7 +89,7 @@ export const deletePostAction = async (postId: string) => {
 
 export const createCommentAction = async (
   postId: string,
-  fromData: FormData
+  formData: FormData
 ) => {
   try {
     const user = await currentUser();
@@ -99,13 +99,13 @@ export const createCommentAction = async (
     if (!postId) throw new Error("Post id required");
 
     const userDataBase: IUser = {
-      firstName: user.firstName || "Patel",
+      firstName: user.firstName || "smile",
       lastName: user.lastName || "Mern Stack",
       userId: user.id,
       profilePhoto: user.imageUrl,
     };
     const post = await Post.findById({ _id: postId });
-    if (!post) throw new Error("Post new found");
+    if (!post) throw new Error("Post not found");
 
     const comment = await Comment.create({
       textMessage: inputText,
