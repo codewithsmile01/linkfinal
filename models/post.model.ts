@@ -6,7 +6,7 @@ export interface IPost {
   description: string;
   user: IUser;
   imageUrl?: string;
-  likes: string[];
+  likes?: string[];
   comments?: IComment[];
 }
 

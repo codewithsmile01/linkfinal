@@ -1,11 +1,31 @@
 import React from 'react'
 import { ICommentDocument } from '@/models/comment.model'
 import ProfilePhoto from '../shared/ProfilePhoto'
-import ReactTimeAgo from 'react-time-ago'
-const Comment = () => {
+import ReactTimeAgo from 'react-timeago'
+const Comment = ({ comment }: { comment: ICommentDocument }) => {
   return (
-    <div>
-      
+    <div className='flex gap-2 my-4'>
+      <div>
+        <ProfilePhoto src={comment?.user?.profilePhoto!} />
+      </div>
+      <div className='flex flex-1 justify-between p-3 bg-[#F2F2F2]'>
+        <div>
+          <h1 className='text-sm font-medium'>
+            {`${comment?.user?.firstName} ${comment?.user?.lastName}`}
+          </h1>
+          <p className='text-sm text-gray-500'>
+            @{comment?.user?.firstName}
+          </p>
+          <p className='my-2'>
+            {comment.textMessage}
+          </p>
+        </div>
+        <div>
+          <p className='text-sm text-gray-500'>
+            <ReactTimeAgo date={new Date(comment.createdAt)} />
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
