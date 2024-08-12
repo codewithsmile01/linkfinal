@@ -19,7 +19,7 @@ const Post = ({ post }: { post: IPostDocument }) => {
 
   return (
     <div className=' bg-white my-2 mx2 md:mx-0 rounded-lg border border-gray-300'>
-      <div>
+      <div className='flex items-center justify-between'>
         <ProfilePhoto src={post?.user?.profilePhoto!} />
         <div className='flex items-center justify-between w-full'>
           <div>
